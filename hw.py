@@ -21,7 +21,8 @@ gl_count = 0
 firstNonce = ""
 finalNonce = ""
 salt = ""
-
+router = os.getenv("ROUTER")
+passwd = os.getenv("PASSWORD")
 
 def update_information(html):
     global gl_cookies
@@ -121,8 +122,6 @@ if __name__ == "__main__":
     session = requests.Session()
     session.verify = False
 
-    router = os.getenv("ROUTER")
-    passwd = os.getenv("PASSWORD")
     username = "admin"
     main_login(session, router, username, passwd)
 
